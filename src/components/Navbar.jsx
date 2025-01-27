@@ -1,30 +1,26 @@
-import { motion } from "framer-motion";
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css"; // Import the associated CSS file
+import "./Navbar.css";
 
-const defaultItems = ["about", "projects", "certificates"];
+const Navbar = () => {
+  const menuItems = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Projects", path: "/projects" },
+  ];
 
-const Navbar = ({ items = defaultItems }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -50 }}
-      transition={{ duration: 0.5 }}
-    >
-      <nav className="navbar">
-        <ul className="navbar-list">
-          {items.map((item) => (
-            <li key={item} className="navbar-item">
-              <Link to={`/${item}`} className="navbar-link">
-                {item}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </motion.div>
+    <nav className="navbar">
+      <ul className="navbar-list">
+        {menuItems.map((item) => (
+          <li key={item.name} className="navbar-item">
+            <Link to={item.path} className="navbar-link">
+              {item.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 
