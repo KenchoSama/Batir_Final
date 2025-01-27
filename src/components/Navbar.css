@@ -1,0 +1,33 @@
+/* Navbar.css */
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2.5rem;
+    background-color: white;
+    border-top: 1px solid black;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .navbar-list {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.875rem; /* Text size: 14px */
+    color: #4b5563; /* Gray-600 */
+  }
+  
+  .navbar-item {
+    list-style: none;
+  }
+  
+  .navbar-link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .navbar-link:hover {
+    color: #1f2937; /* Gray-900 */
+  }
+  
